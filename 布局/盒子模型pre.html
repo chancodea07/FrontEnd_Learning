@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.box1 {
+			/* 内容区（content）元素中的所有子元素和文本内容
+                内容区的大小由width和height两个属性设置
+                width：设置内容区的宽度
+                height：设置内容区的高度
+             */
+			width: 200px;
+			height: 200px;
+			background-color: #bfa;
+			/*
+            边框（border）属于盒子的边缘，边框里面属于盒子内部，出了边框都是盒子的外部，设置边框至少需要设置三个样式，边框的大小至少会影响到整个盒子的大小
+            边框宽度：border-width
+            边框颜色：border-color
+            边框的样式：border-style
+             */
+			border-width: 10px;
+			border-color: red;
+			border-style: solid;
+		}
+	</style>
+	<body>
+		<!--
+        盒子模型
+        CSS将页面中的所有元素都设置成了一个矩形的盒子
+        将元素设置为矩形的盒子后，对于页面的布局就变成了将不同的盒子摆放到不同的位置
+        每一个盒子都由以下几个部分构成：
+            内容区（content）
+            内边距（padding）
+            边框（border）
+            外边距（margin）
+
+    -->
+		<div class="box1"></div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS简介</title>
+		<!-- 第二种方式：
+        将样式编写到head标签中的style标签里，然后通过CSS选择器来选中元素并为其设置各种样式，可以同时未多个标签设置样式，修改时修改一处就可以全部应用，但是内部样式表只可以对一个网页起作用，它里面的样式不可以对其它页面进行复用
+   		 -->
+		<!-- <style>
+			p {
+				color: green;
+				font-size: 20px;
+				font-style: underline;
+				必须遵循css的语法规则，不要用html的语法
+			}
+
+		</style> -->
+		<!-- 第三种方式：外部样式表
+			可以将css样式编写到一个外部的css文件中，然后通过link标签引入外部的css文件中
+			外部样式表需要通过link标签进行引用，意味着只要想使用这些样式的网页都可以对其进行引用，使得样式可以在不同页面之间进行复用
+			将央视编写到外部的css文件中，可以使用到浏览器的缓存机制，从而加快网页的加载速度，提升用户体验
+		-->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- 网页分成三个部分：
+            结构（HTML）
+            表现（CSS）
+            行为（JavaScript）
+        CSS
+            层叠样式表
+            网页实际上是一个多层的结构，通过CSS可以分别为网页的每一各层设置样式，而最终我们可以看到只是网页的最上面一层
+            CSS用于设置网页中的元素样式
+    -->
+		<!-- 使用 CSS修改元素样式
+            第一种样式：
+                通过标签内部style属性设置元素样式，叫做内联样式（行内样式）
+                    问题：使用内联样式，样式只能对一个标签生效，如果希望影响到每个元素，必须进行多重复制粘贴的操作，并且网页的可维护性差
+                大型开发不要使用内联样式
+    -->
+		<!-- <p style="color: blue; font-size: 30px;">你好</p>
+    <p style="color: green; font-size: 30px;">今天天气真不错</p>
+    <p style="color: red; font-size: 30px;">你好\(@^0^@)/</p> -->
+		<h1>CSS简介</h1>
+		<p>你好，这是CSS的入门教程！</p>
+	</body>
+</html>

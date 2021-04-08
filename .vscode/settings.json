@@ -1,0 +1,26 @@
+{
+  "breadcrumbs.enabled": true,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.cursorBlinking": "smooth",
+  "editor.minimap.renderCharacters": false,
+  "editor.fontLigatures": true,
+  "explorer.confirmDragAndDrop": false,
+  "files.insertFinalNewline": true,
+  "git.autofetch": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "typescript.locale": "en",
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "window.zoomLevel": -1,
+  "workbench.activityBar.visible": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "vsicons.projectDetection.autoReload": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}
