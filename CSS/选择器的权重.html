@@ -16,21 +16,23 @@
 			background-color: red;
 		}
 		.d1 {
-			background-color: purple;
+			background-color: rgb(52, 154, 155);
 		}
 		div {
 			color: yellow;
+			font-size: 30px;
 		}
 		div,
 		p,
 		span {
-			color: yellowgreen;
+			color: aqua;
 		}
-		* {
-			font-size: 23px;
+		*{
+			font-size: 40px;
 		}
-		div {
-			font-size: 20px;
+		::selection{
+			color: red;
+			background-color: yellow;
 		}
 		/* 样式冲突：当我们通过不同的选择器选中相同的元素，并且为相同的样式设置不同的值，此时就发生了样式冲突，注意最终显示的样式效果和位置无关
             发生样式冲突时，应用哪个样式由选择器的权重决定
