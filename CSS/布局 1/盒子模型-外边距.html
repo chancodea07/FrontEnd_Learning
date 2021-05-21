@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			background-color: #bfa;
+			border: 10px red solid;
+			/*
+                外边距
+                    外边距不会影响盒子可见框的大小
+                    外边距会影响盒子的位置
+                    一共有四个方向的外边距
+                    margin-top:上外边距，设置一个正值，元素会向下移动
+                    margin-left:左外边距，设置一个正值，元素会向右移动
+                    margin-bottom:下外边距，设置一个正值，其下的元素向下移动
+                    margin-right:右外边距，默认为0，不会产生任何效果
+                    元素在页面中是自左向右排列的，所以默认情况下，如果设置的是左和上外边距，则将会移动元素自身，而设置其他边距（右或下，）会移动其他元素
+
+                    margin也可以设置为负值，意味着相反方向
+
+                    margin简写属性：同时设置四个方向的外边距，用法和padding一样
+             */
+			margin-top: 100px;
+			margin-left: 100px;
+			/* 左外边距，设置一个正值，元素向右移动 */
+			margin-bottom: 50px;
+		}
+		.box2 {
+			width: 220px;
+			height: 220px;
+			background-color: yellow;
+			margin-top: 100px;
+			margin-left: 100px;
+		}
+	</style>
+	<body>
+		<div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, corrupti quisquam illo provident dolores quasi asperiores ipsa vero, quia tempore, sunt amet laborum? Sequi eligendi qui quos id voluptate eos.</div>
+		<div class="box2"></div>
+	</body>
+</html>

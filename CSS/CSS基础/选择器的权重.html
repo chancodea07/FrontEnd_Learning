@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		#box1 {
+			color: orange;
+		}
+		div#box1 {
+			color: yellowgreen;
+		}
+		.red {
+			background-color: red;
+		}
+		.d1 {
+			background-color: rgb(52, 154, 155);
+		}
+		div {
+			color: yellow;
+			font-size: 30px;
+		}
+		div,
+		p,
+		span {
+			color: aqua;
+		}
+		*{
+			font-size: 40px;
+		}
+		::selection{
+			color: red;
+			background-color: yellow;
+		}
+		/* 样式冲突：当我们通过不同的选择器选中相同的元素，并且为相同的样式设置不同的值，此时就发生了样式冲突，注意最终显示的样式效果和位置无关
+            发生样式冲突时，应用哪个样式由选择器的权重决定
+            选择器的权重：
+                直接在标签内部写入style属性的内联样式        1,0,0,0
+                id选择样式                                 0,1,0,0
+                类和伪类选择器                              0,0,1,0
+                元素选择器                                  0,0,0,1
+                通配选择器                                  0,0,0,0
+                继承样式                                    没有优先级
+            比较优先级时，需要将所有的选择器的优先级进行相加运算，最有优先级越高，则越优先显示（分组选择器单独计算）
+            选择器的累加不会超过其最大的数量级，例如类选择器叠加值永远小于id选择器
+            如果优先级相同，此时则优先使用靠下的样式
+            可以在样式的后面添加!important则此时此样式会超过所有的选择器优先级，甚至包括内联样式，但是尽量不要在实际的开发中使用
+         */
+	</style>
+	<body>
+		<div id="box1" class="red d1">我是一个div <span>我是div中的span</span></div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<!-- 添加任务 -->
+		<div class="header">
+			<div class="box">
+				<form action="javascript:postaction()" id="form">
+					<label for="title">ToDoList</label>
+					<!-- required规定提交表单之前有必填字段  autocomplete:自动补齐-->
+					<input
+						type="text"
+						name="title"
+						id="title"
+						placeholder="添加ToDo"
+						required="required"
+						autocomplete="off"
+					/>
+				</form>
+			</div>
+		</div>
+		<!-- 在这里进行任务和已完成 -->
+		<div class="content">
+			<h2 onclick="save()">正在进行<span id="todocount"></span></h2>
+			<ol id="todolist" class="demo-box"></ol>
+			<h2>已完成<span id="donecount"></span></h2>
+			<ul id="donelist"></ul>
+		</div>
+		<!-- 脚印：印记和全清除按钮 -->
+		<div id="footer">
+			Copyright &copy; 2021 todolist.cn <a href="javascript:clear();">clear</a>
+		</div>
+		<!-- 外接js -->
+		<script src="./index.js"></script>
+	</body>
+</html>
