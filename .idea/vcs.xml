@@ -2,7 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/HTML-MDN/learning-area" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/前端参考资源/learning-area" vcs="Git" />
   </component>
 </project>

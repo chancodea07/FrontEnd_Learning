@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		#morning {
+			color: red;
+		}
+		#afternoon {
+			color: blue;
+		}
+		#evening {
+			color: aqua;
+		}
+	</style>
+	<body>
+		<div id="time"></div>
+		<script>
+			/* 需求：
+  根据不同时间，页面显示时间（12小时制），同时显示不同的问候语。
+  如果上午时间打开页面，显示上午好，字体为红色。
+  如果下午时间打开页面，显示下午好，字体为蓝色。
+  如果晚上时间打开页面，显示晚上好，字体为青色。
+    */
+			let date = new Date();
+			let div_time = document.getElementById("time");
+			let hour = date.getHours(); /* 24小时制 */
+			if (hour <= 12) {
+				div_time.innerHTML = "上午好!" + "<br>现在是上午" + hour + "时";
+				div_time.id = "morning";
+			} else if (hour <= 18) {
+				hour -= 12;
+				div_time.innerHTML = "下午好!" + "<br>现在是下午" + hour + "时";
+				div_time.id = "afternoon";
+			} else {
+				hour -= 12;
+				div_time.innerHTML = "晚上好!" + "<br>现在是晚上" + hour + "时";
+				div_time.id = "evening";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: aqua;
+		}
+	</style>
+	<body>
+		<div></div>
+		<script>
+			let div = document.getElementsByTagName("div")[0];
+			/* 这里返回的是一个集合，即使有一个也要选[0] */
+			div.onclick = function () {
+				this.style.backgroundColor = "red";
+        this.style.width = '250px'
+        /* 这里修改产生的是行内样式，优先级比内联样式高 */
+			};
+		</script>
+	</body>
+</html>

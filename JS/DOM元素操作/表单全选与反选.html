@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+    <div class="wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="j_cbAll" />
+						</th>
+						<th>商品</th>
+						<th>价格</th>
+					</tr>
+				</thead>
+        <tbody id="j_tb">
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>iPhone8</td>
+            <td>8000</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>iPad Air</td>
+            <td>4500</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>iPhone12</td>
+            <td>10000</td>
+          </tr>
+        </tbody>
+			</table>
+    </body>
+  </div>
+  <script>
+    /* 全选和反选：让下边所有复选框的checked属性跟随全选按钮 */
+    var j_cbAll  = document.getElementById('j_cbAll');
+    var j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+    j_cbAll.onclick = function () {
+      // this.checked 得到当前复选框的选中状态
+      for(var i = 0;i < j_tbs.length;i++){
+        j_tbs[i].checked = this.checked;
+      }
+    }
+    /* 下面的复选框需要全部选中，上面全选才能选中 */
+    for(var i = 0;i<j_tbs.length;i++){
+      j_tbs[i].onclick = function () {
+        var flag = true; //状态变量
+        /* 循环检查 */
+        for(var i = 0;i < j_tbs.length; i++){
+          if (!j_tbs[i].checked) {
+            flag = false;
+          }
+        }
+        j_cbAll.checked = flag;
+      }
+    }
+
+  </script>
+  </html>

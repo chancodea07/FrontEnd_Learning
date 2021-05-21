@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>百度静态网页</title>
+	</head>
+	<style>
+		.a {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			align-content: flex-start;
+		}
+		.info {
+			display: flex;
+			flex-direction: row;
+		}
+		p{
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-top: 175px;
+			color: rgba(104, 111, 111, 0.598);
+			font-family: "Courier New", Courier, monospace;
+			font-size: 14px;
+		}
+    .b{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    .b>p{
+      margin-top: 0;
+    }
+		button {
+			background-color: rgb(69, 136, 248);
+			color: white;
+			width: 100px;
+			height: 30px;
+		}
+		#inputbox {
+			width: 300px;
+			height: 25px;
+			border: gray solid 1px;
+		}
+    #btn1{
+      height: 16px;
+    width: 43px;
+    font-size: 14px;
+    }
+	</style>
+	<body>
+    <div class="b">
+			<p>新闻</p>
+			<p>hao123</p>
+			<p>地图</p>
+			<p>视频</p>
+			<p>贴吧</p>
+			<p>学术</p>
+			<p>登录</p>
+			<p>设置</p>
+      <button id="btn1">更多</button>
+		</div>
+		<div class="a">
+			<div class="image">
+				<img src="./baidu.gif" alt="" />
+			</div>
+			<div class="text_button">
+				<input type="text" id="inputbox" /><button>百度一下</button>
+			</div>
+			<div class="info">
+				<p class="ini1">把百度设置为首页</p>
+				<p class="ini1">关于百度</p>
+				<p class="ini1">about百度</p>
+				<p class="ini1">百度推广</p>
+			</div>
+		</div>
+
+	</body>
+</html>

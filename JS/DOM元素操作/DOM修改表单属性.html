@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button>按钮</button>
+		<label for="name">Name</label><!-- label匹配 -->
+		<input type="text" id="name" name="name" value="输入内容">
+    <script>
+      // 获取元素
+      let btn = document.querySelector('button');
+      let input = document.querySelector('input');
+      btn.onclick = function () {
+        /* 注意表单元素和普通元素的区别，表单元素有专门的属性 */
+        // input.innerHTML = '点击了'
+        input.value = '被点击';
+        /* 某个表单被禁用，不可再点击 */
+        // btn.disabled = true;
+        this.disabled = true
+        /* this指向的是事件函数的调用者，这里是btn */
+      }
+
+    </script>
+	</body>
+</html>
