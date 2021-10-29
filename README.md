@@ -16,8 +16,3 @@ git config --global http.proxy 'socks5://127.0.0.1:4500'
 git config --global https.proxy 'socks5://127.0.0.1:4500'
 ```
 
-截止到2021年5月23日，现已完成
-
-- HTML/CSS基本内容，但是未展开学习
-- JS基础语法、基本的DOM和BOM操作
-
