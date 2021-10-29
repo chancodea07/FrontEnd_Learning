@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		td {
+			width: 150px;
+			height: 50px;
+			border: 1px black solid;
+		}
+	</style>
+	<body>
+		<div class="main"></div>
+		<script>
+			function createNode(nodeType, nodeTxt) {
+        
+      }
+			var main = document.querySelector(".main");
+			const row = 4;
+			const column = 3;
+			for (let i = 0; i < row; i++) {
+				var tr = document.createElement("tr");
+				for (let j = 0; j < column; j++) {
+					var td = document.createElement("td");
+					tr.appendChild(td);
+				}
+				main.appendChild(tr);
+			}
+		</script>
+	</body>
+</html>

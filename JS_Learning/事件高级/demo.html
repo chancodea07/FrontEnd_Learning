@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    //事件委托：父节点设置监听，利用事件冒泡影响每个子节点
+    const ul = document.querySelector('ul');
+    const li = document.querySelectorAll('li');
+    const body = document.querySelector('body');
+    ul.addEventListener('click', function (e) {
+        for (let i = 0; i < li.length; i++) {
+            li[i].style.backgroundColor = '';
+        }
+        e.target.style.backgroundColor = '#bfa';
+    })
+</script>
+</body>
+</html>

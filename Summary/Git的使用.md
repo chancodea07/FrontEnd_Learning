@@ -9,13 +9,13 @@
 > 默认设置代理端口为 1080，下次使用时直接赋值即可
 
 ```bash
-git config --global https.proxy http://127.0.0.1:4500
-git config --global https.proxy https://127.0.0.1:4500
+git config --global https.proxy http://127.0.0.1:7890
+git config --global https.proxy https://127.0.0.1:7890
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 npm config delete proxy
-git config --global http.proxy 'socks5://127.0.0.1:4500'
-git config --global https.proxy 'socks5://127.0.0.1:4500'
+git config --global http.proxy 'socks5://127.0.0.1:7890'
+git config --global https.proxy 'socks5://127.0.0.1:7890'
 ```
 
 ## 本地 Git 仓库操作
@@ -65,6 +65,7 @@ ssh -T git@github.com
 ## 推送文件到远程
 
 **建议**，在远程建立好仓库，本地进行 clone，然后再添加新文件，最后推送至远程。这样的步骤对新手比较友好。
+git push -f origin master
 
 > 如：事先在 github 建立了仓库，bysj，并新建了 README 文件，此时远程仓库中只有这一个文件。
 
@@ -72,3 +73,4 @@ ssh -T git@github.com
 
 ① 建立本地仓库
 ② 与远程建立连接，测试
+

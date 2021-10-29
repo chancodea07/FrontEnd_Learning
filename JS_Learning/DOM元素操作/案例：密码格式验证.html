@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		div {
+			width: 600px;
+			margin: 100px auto;
+		}
+		.message {
+			display: inline-block;
+			font-size: 12px;
+			color: #999;
+			background: url(../images/mess.png) no-repeat left center;
+			padding-left: 20px;
+		}
+    .wrong{
+      color:red;
+      background: url(../images/wrong.png) no-repeat left center;
+    }
+    .right{
+      color: green;
+      background: url(../images/right.png) no-repeat left center;
+    }
+	</style>
+	<body>
+		<div>
+			<input type="password" class="ipt" />
+			<p class="message">请输入6-16位密码</p>
+		</div>
+		<script>
+			var ipt = document.querySelector(".ipt");
+			var message = document.querySelector(".message");
+			ipt.onblur = function () {
+				/* 根据长度判断 注意是多个类名进行判断！ */
+				if (this.value.length < 6 || this.value.length > 16) {
+          message.className = 'message wrong';
+          message.innerHTML = '输入密码格式有误';
+				}else{
+          message.className = 'message right';
+          message.innerHTML = '正确的✔'
+        }
+			};
+		</script>
+	</body>
+</html>

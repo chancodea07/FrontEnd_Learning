@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+  <style>
+    div,p{
+      width: 300px;
+      height: 30px;
+      line-height: 30px;
+      color:blue;
+      background-color: antiquewhite;
+    }
+  </style>
+	<body>
+		<button>显示当前系统时间</button>
+		<div>时间</div>
+    <p>？</p>
+		<script>
+			/*
+      element.innerText从起始位置到终止位置的内容, 但它去除 html 标签， 同时空格和换行也会去掉
+      element.innerHTML起始位置到终止位置的全部内容，包括 html 标签，同时保留空格和换行，用的最多
+      二者的区别：
+			前者不识别html标签，当作纯文本
+			后者识别html标签，W3C标准
+    */
+			//当点击按钮，div里面的文字会发生变换
+			//1. 获取元素
+			let btn = document.querySelector("button");
+			let div = document.querySelector("div");
+			//注册事件
+			btn.onclick = function () {
+				div.innerHTML = getDate();
+			};
+			function getDate() {
+				let date = new Date();
+				let year = date.getFullYear();
+				let month = date.getMonth() + 1;
+				let dates = date.getDate();
+				let arr = [
+					"星期天",
+					"星期一",
+					"星期二",
+					"星期三",
+					"星期四",
+					"星期五",
+					"星期六",
+				];
+				let day = date.getDay();
+				return (
+					"今天是：" + year + "年" + month + "月" + dates + "日" + arr[day]
+				);
+        //
+			}
+      let p = document.querySelector('p');
+      p.innerHTML = getDate();/* 不添加事件，直接显示系统时间，修改其中的属性值即可 */
+    </script>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		table {
+			width: 500px;
+			margin: 100px auto;
+			border-collapse: collapse;
+			text-align: center;
+		}
+		td,
+		th {
+			border: 1px solid #333;
+		}
+		thead tr {
+			height: 40px;
+			background-color: #ccc;
+		}
+	</style>
+	<body>
+		<table cellspacing="0">
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>科目</th>
+					<th>成绩</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<script>
+			// 准备好学生的数据
+			class Student {
+				constructor(name, subject, score) {
+					this.name = name;
+					this.subject = subject;
+					this.score = score;
+				}
+			}
+			const John = new Student("John", "JavaScript", 100);
+			const Rahn = new Student("Rahn", "CSS", 98);
+			const Elis = new Student("Elis", "HTML", 98);
+			const Wriya = new Student("Wriya", "Python", 95);
+			const Helo = new Student("Helo", "Go", 85);
+			const Hadis = new Student("Hadis", "Ruby", 85);
+
+			const student_data = [John, Rahn, Elis, Wriya, Helo]; //对象数组
+			// tbody中创建行
+			const tbody = document.querySelector("tbody");
+			/* 创建单元格 */
+			for (let i = 0; i < student_data.length; i++) {
+				//创建tr行
+				let tr = document.createElement("tr");
+				tbody.appendChild(tr);
+				//行内创建单元格 td 单元格的数量取决于每个对象的属性个数 for循环遍历对象
+				//里面的for管理列 td
+				for (let k in student_data[i]) {
+					// 创建单元格
+					let td = document.createElement("td");
+					// 对象中的属性值 给 td
+					td.innerHTML = student_data[i][k];
+					/*
+                    对象遍历
+                    for(var k in obj)
+                    k 得到的是属性名
+                    obj得到的是属性值
+                    */
+					tr.appendChild(td);
+				}
+				// 创建带有删除两个字的单元格
+				let td = document.createElement("td");
+				td.innerHTML = '<a href="javascript:;">删除</a>';
+				tr.appendChild(td);
+			}
+			/* 删除操作 */
+			let as = document.querySelectorAll("a");
+			for (let i = 0; i < as.length; i++) {
+				as[i].onclick = function () {
+					/* 点击 删除 删除a元素所在的行（链接的父元素的父元素） */
+					tbody.removeChild(this.parentNode.parentNode);
+				};
+			}
+		</script>
+	</body>
+</html>

@@ -457,7 +457,9 @@ id > class > tag
 
 ![image-20210430110413068](CSS3.assets/image-20210430110413068.png)
 
-## 文本样式
+## 内容样式
+
+> （字体、文本、颜色）
 
 ### 颜色
 
@@ -479,15 +481,62 @@ id > class > tag
         S 浓度
         L 亮度
 
+### 字体样式
+
+| 属性        | 说明     |
+| :---------- | :------- |
+| font-family | 字体类型 |
+| font-size   | 字体大小 |
+| font-weight | 字体粗细 |
+| font-style  | 字体风格 |
+| color       | 字体颜色 |
+
 ### 文本样式
 
-- 文本对齐
-- 首行缩进
-- 行高
-- 装饰
-- 文本图片对齐
+| 属性            | 说明       |
+| :-------------- | :--------- |
+| text-indent     | 首行缩进   |
+| text-align      | 水平对齐   |
+| text-decoration | 文本修饰   |
+| text-transform  | 大小写转换 |
+| line-height     | 行高       |
 
-代码示例
+#### 文本对齐 text-align
+
+text-align属性取值有3个，如下表所示。
+
+| 属性值 | 说明             |
+| :----- | :--------------- |
+| left   | 左对齐（默认值） |
+| center | 居中对齐         |
+| right  | 右对齐           |
+
+在实际开发中，我们只会用到居中对齐（center）这一个，其他两个几乎用不上。此外，text-align属性不仅对文本有效，对图片（img元素）也有效。对于图片水平对齐，我们在后面会详细介绍。
+
+#### 文本首行缩进 text-indent
+
+中文段落首行一般需要缩进两个字的空间。如果想要实现这个效果，text-indent值应该是font-size值的2倍。
+
+#### 文本行高调整 line-height
+
+在CSS中，我们可以使用line-height属性来控制一行文本的高度（注意不要和行间距混为一谈）
+
+#### 文本装饰 text-decoration
+
+text-decoration属性取值有4个，如下表所示。
+
+| 属性值       | 说明                         |
+| :----------- | :--------------------------- |
+| none         | 去除所有的划线效果（默认值） |
+| underline    | 下划线                       |
+| line-through | 中划线                       |
+| overline     | 顶划线                       |
+
+在HTML学习中，我们使用s元素实现中划线，用u元素实现下划线。但是有了CSS之后，我们都是用text-decoration属性来实现。
+
+在前端开发中，对于外观控制一般用CSS来实现，而不是使用标签来实现，这更加符合结构与样式分离的原则，提高可读性和可维护性。
+
+#### 代码示例
 
 ```html
 <!DOCTYPE html>
@@ -552,7 +601,7 @@ id > class > tag
 
 ```
 
-## 文本阴影和超链接伪类
+### 文本阴影和超链接伪类（CSS3）
 
 ```html
 <!DOCTYPE html>
@@ -601,3 +650,190 @@ id > class > tag
 </html>
 ```
 
+## 列表样式
+
+在CSS中，不管是有序列表还是无序列表，我们都是使用list-style-type属性来定义列表项符号。
+
+list-style-type属性是针对ol或者ul元素的，而不是li元素。其中，list-style-type属性取值如下表所示。
+
+| 属性值      | 说明                           |
+| :---------- | :----------------------------- |
+| decimal     | 阿拉伯数字：1、2、3…（默认值） |
+| lower-roman | 小写罗马数字：i、ii、iii…      |
+| upper-roman | 大写罗马数字：I、II、III…      |
+| lower-alpha | 小写英文字母：a、b、c…         |
+| upper-alpha | 大写英文字母：A、B、C…         |
+
+| 属性值 | 说明              |
+| :----- | :---------------- |
+| disc   | 实心圆●（默认值） |
+| circle | 空心圆○           |
+| square | 正方形■           |
+
+上面的都不用记，只是列举一下
+
+**最常用的是去掉默认的列表样式**
+
+```css
+list-style-type: none;
+```
+
+使用list-style-type:none这个小技巧可以去除列表项默认的符号，在实际开发中，我们经常会用到。
+
+`ol,ul{list-style-type:none;}`使用的是“群组选择器”。当对多个不同元素定义了相同的CSS样式时，我们就可以使用群组选择器。在群组选择器中，元素之间是用英文逗号隔开的，而不是中文逗号。
+
+除此以外，列表项图片也用于设置列表样式
+
+在CSS中，我们可以使用list-style-image属性来定义列表项图片，也就是使用图片来代替列表项符号。
+
+```css
+list-style-image: url(图片路径);
+```
+
+## 表格样式
+
+### 表格标题
+
+在CSS中，我们可以使用caption-side属性来定义表格标题的位置。
+
+| 属性值 | 说明                 |
+| :----- | :------------------- |
+| top    | 标题在顶部（默认值） |
+| bottom | 标题在底部           |
+
+### 表格边框距离调整
+
+从前面的学习中可以知道，表格加入边框后的页面效果中，单元格之间是有一定空隙的。但是在实际开发中，为了让表格更加美观，我们都是要把单元格之间的空隙去除。
+
+在CSS中，我们可以使用border-collapse属性来去除单元格之间的空隙，也就是将两条边框合并为一条。
+
+border-collapse属性取值只有2个，如下表所示 。
+
+| 属性值   | 说明                       |
+| :------- | :------------------------- |
+| separate | 边框分开，有空隙（默认值） |
+| collapse | 边框合并，无空隙           |
+
+同时，我们也可以具体调整边框之间的距离
+
+在CSS中，我们可以使用border-spacing属性来定义表格边框间距。在CSS中，border-spacing属性也是在table元素中定义的。
+
+## 图片样式
+
+### 图片大小
+
+- 使用PS直接制作相应大小的图片
+- 使用width、height调整元素大小
+
+### 图片的对齐方式
+
+水平方式和文本样式相同 我们可以使用text-align属性来定义图片水平对齐方式。
+
+> text-align属性一般只用于两个地方：文本水平对齐和图片水平对齐。
+
+> 垂直对齐：暂略 
+>
+> vertical-align属性定义周围的行内元素或文本相对于该元素的垂直方式 ，这里暂不分析
+
+## 背景样式
+
+### 背景样式简介
+
+在CSS中，背景样式包括两个方面：背景颜色和背景图片。
+
+### 背景颜色
+
+在CSS中，定义“背景颜色”使用的是background-color属性
+
+### 背景图片样式
+
+| 属性                  | 说明                                     |
+| :-------------------- | :--------------------------------------- |
+| background-image      | 定义背景图片地址                         |
+| background-repeat     | 定义背景图片重复，例如横向重复、纵向重复 |
+| background-position   | 定义背景图片位置                         |
+| background-attachment | 定义背景图片固定                         |
+
+#### 背景图片地址
+
+`background-image: url(图片路径);`
+
+#### 背景图片重复
+
+background-repeat属性取值有4个，如下表所示。
+
+| 属性值    | 说明                                     |
+| :-------- | :--------------------------------------- |
+| repeat    | 在水平方向和垂直方向上同时平铺（默认值） |
+| repeat-x  | 只在水平方向（x轴）上平铺                |
+| repeat-y  | 只在垂直方向（y轴）上平铺                |
+| no-repeat | 不平铺                                   |
+
+#### 背景图片定位
+
+在CSS中，我们可以使用background-position属性来定义背景图片的位置。
+
+background-position属性常用取值有两种：一种是“像素值”；另外一种是“关键字”（这里不考虑百分比取值）。
+
+##### 像素值定位
+
+当background-position属性取值为“像素值”时，要同时设置水平方向和垂直方向的数值。
+
+background-position属性设置的两个值是相对该元素的左上角来说的
+
+水平距离和垂直距离这两个数值之间要用空格隔开，两者取值都是像素值。
+
+##### 关键字定位
+
+| 属性值        | 说明     |
+| :------------ | :------- |
+| top left      | 左上     |
+| top center    | 靠上居中 |
+| top right     | 右上     |
+| center left   | 居中靠左 |
+| center center | 正中     |
+| center right  | 居中靠右 |
+| bottom left   | 左下     |
+| bottom center | 靠下居中 |
+| bottom right  | 右下     |
+
+在实际开发中，background-position一般用于实现CSS Spirit（精灵图片）
+
+#### 样式简写
+
+如需缩短代码，也可以在一个属性中指定所有背景属性。它被称为简写属性。
+
+```css
+body {
+  background-color: #ffffff;
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+```
+
+使用简写属性在一条声明中设置背景属性：
+
+```css
+body {
+  background: #ffffff url("tree.png") no-repeat right top;
+}
+```
+
+## 鼠标样式
+
+在CSS中，我们可以使用cursor属性来定义鼠标样式。
+
+在实际开发中我们一般只会用到3个：default、pointer和text
+
+也可以自定义鼠标样式
+
+除了使用浏览器自带的鼠标样式，我们还可以使用cursor属性来自定义鼠标样式。只不过语法稍微有点不一样。
+
+```css
+cursor: url(图片地址), 属性值;
+```
+
+说明：
+
+这个“图片地址”是鼠标图片地址，其中鼠标图片后缀名一般都是.cur，我们可以使用Photoshop来制作

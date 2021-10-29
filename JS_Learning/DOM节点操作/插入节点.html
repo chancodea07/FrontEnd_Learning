@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="js">JavaScript</p>
+<div id="list">
+    <p id="se">JavaSE</p>
+    <p id="ee">JavaEE</p>
+    <p id="me">JaveME</p>
+</div>
+<script>
+    let element = document.getElementById('js');
+    let list = document.getElementById('list');
+    // 追加元素
+    list.appendChild(element);
+    //通过JS创建一个新的节点，实现插入
+    let newP = document.createElement('p');
+    newP.id = 'newP';
+    newP.innerHTML = '<strong>Hello</strong>';
+    list.appendChild(newP);
+    //创建一个新的标签节点
+    let newScript = document.createElement('script');
+    newScript.setAttribute('type', 'text/javascript');//设置属性
+    //   JS实现样式表添加
+    let myCSS = document.createElement('style');
+    myCSS.setAttribute('type', 'text/css');
+    myCSS.innerHTML = 'body{background-color:#bfa;}';
+    let bodyT = document.getElementsByTagName('body')[0];
+    bodyT.appendChild(myCSS)
+
+</script>
+</body>
+</html>

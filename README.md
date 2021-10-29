@@ -1,6 +1,6 @@
 # 前端
 
-记录了前端相关的学习，截止到 2021 年 5 月 2 日
+记录了前端相关的学习
 
 - 代码、笔记参考 B 站各种教程、W3CSchool、菜鸟教程等……
 - CSS、HTML 的部分不完善，只是大体的内容，有待进一步补充细节
@@ -15,4 +15,9 @@ npm config delete proxy
 git config --global http.proxy 'socks5://127.0.0.1:4500'
 git config --global https.proxy 'socks5://127.0.0.1:4500'
 ```
+
+截止到2021年5月23日，现已完成
+
+- HTML/CSS基本内容，但是未展开学习
+- JS基础语法、基本的DOM和BOM操作
 

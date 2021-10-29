@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    li a {
+        float: right;
+    }
+</style>
+<body>
+<label for=""></label><textarea name="" id="" cols="30" rows="10"></textarea>
+<button>发布</button>
+<ul>
+
+</ul>
+<script>
+    // 获取元素
+    const btn = document.querySelector('button');
+    const text = document.querySelector('textarea');
+    const ul = document.querySelector('ul');
+    // 注册事件
+    btn.onclick = function () {
+        if (text.value === '') {
+            alert('请输入内容');
+            return false
+        }
+        // 创建元素
+        let time = new Date();
+        let li = document.createElement('li');
+        li.innerHTML = text.value + ' ' + time.getFullYear() + '-' +
+            time.getMonth() + '-' + time.getDate() + ' ' + time.getHours() + ':' + time.getMinutes() + "  <a href='javascript:;'>删除</a>";
+        li.style.backgroundColor = '#f5d42e';
+        li.style.marginTop = '5px';
+        li.style.border = 'red solid 2px';
+        // 添加元素
+        ul.insertBefore(li, ul.children[0]);
+        text.value = '';
+
+        //删除元素：删除链接的父元素
+        let as = document.querySelectorAll('a');
+        for (let i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                ul.removeChild(this.parentNode); //删除a的父元素
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

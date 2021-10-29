@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+    //ES6 的新特性
+    const map = new Map([['tom', 100], ['Jack', 90], ['John', 80]]);
+    let name = map.get('tom');
+    //   通过get获取 键值对 键值获取value
+    console.log(name);
+    map.set('admin', 123456)
+    //   map.set 新增一个值
+    let set = new Set([3, 1, 1, 1, 1, 1, 2]); // set可以去重
+    set.add(1);
+    set.delete(2);
+    console.log(set.has(3)) // 是否包含某个元素
+</script>
+</body>
+</html>

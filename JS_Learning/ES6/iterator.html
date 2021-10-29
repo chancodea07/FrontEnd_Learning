@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 通过for of实现 for in是下标的遍历
+    // for...in 语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。
+    // 使用for-in会遍历数组所有的可枚举属性，包括原型。
+    // 例如上例的原型方法method和name属性都会被遍历出来，
+    // 通常需要配合hasOwnProperty()方法判断某个属性是否该对象的实例属性，来将原型对象从循环中剔除。
+    // 不建议遍历数组，for in推荐用于遍历对象
+    let arr = [1, 2, 4, 5, 7];
+    for (let index in arr) {
+        console.log(arr[index]);
+    }
+
+
+    //for Each循环
+    // 函数
+    let age = [12, 36, 9, 5, 69, 74, 32, 65, 14, 88];
+    age.forEach(function (value){
+        console.log(value)
+    })
+    // 遍历属性
+    for (let num in age) {
+        if (age.hasOwnProperty(num))
+        {
+            console.log('存在');
+            console.log(age[num]);
+        }
+    }
+
+    // 迭代器
+    for (let x of arr)
+        console.log(x);
+    const map = new Map([['Tom', 100], ['Jack', 10], ['Redis', 16]])
+    for (const x of map) {
+        console.log(x);
+    }
+    const set = new Set([5, 6, 7]);
+    console.log(x);
+</script>
+</body>
+</html>
